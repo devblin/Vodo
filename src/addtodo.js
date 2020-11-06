@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import M from "materialize-css";
 
 class AddTodo extends Component {
 	state = {
@@ -21,7 +22,11 @@ class AddTodo extends Component {
 				content: "",
 			});
 		} else {
-			alert("To-Do can't be empty");
+			M.toast({
+				html: "<span>To-Do can't be empty</span>",
+				classes: "rounded",
+				displayLength: 1000,
+			});
 		}
 	};
 
@@ -41,10 +46,10 @@ class AddTodo extends Component {
 							onChange={this.handleChange}
 							value={this.state.content}
 						/>
-						<label for="icon_prefix">New Todo</label>
+						<label htmlFor="icon_prefix">New Todo</label>
 					</div>
-					<button class="btn-floating btn-large waves-effect waves-light red">
-						<i class="material-icons">add</i>
+					<button className="btn-floating btn-large waves-light red">
+						<i className="material-icons">add</i>
 					</button>
 				</form>
 			</div>

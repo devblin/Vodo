@@ -9,12 +9,14 @@ const Todos = (props) => {
 					className="collection-item"
 					key={todo.id}
 				>
-					<span>{todo.content}</span>
+					<h6>{todo.content}</h6>
 				</div>
 			);
 		})
 	) : (
-		<p className="center red-text">No Todos</p>
+		<p className="center red-text">
+			<h5>No Todos</h5>
+		</p>
 	);
 
 	return <div className="todos collection">{todoList}</div>;
