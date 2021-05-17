@@ -3,29 +3,28 @@ import M from "materialize-css";
 
 class AddTodo extends Component {
 	state = {
-		content: "",
+		content: ""
 	};
 
-	handleChange = (e) => {
+	handleChange = e => {
 		this.setState({
-			content: e.target.value,
+			content: e.target.value
 		});
 	};
 
-	handleSubmit = (e) => {
+	handleSubmit = e => {
 		e.preventDefault();
-		console.log(this.state);
 
 		if (this.state.content !== "") {
 			this.props.addTodo(this.state);
 			this.setState({
-				content: "",
+				content: ""
 			});
 		} else {
 			M.toast({
-				html: "<span>To-Do can't be empty</span>",
+				html: "<div>To-Do can't be empty</div>",
 				classes: "rounded",
-				displayLength: 1000,
+				displayLength: 300
 			});
 		}
 	};

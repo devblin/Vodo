@@ -1,8 +1,8 @@
 import React from "react";
 
-const Todos = (props) => {
+const Todos = props => {
 	const todoList = props.todos.length ? (
-		props.todos.map((todo) => {
+		props.todos.map(todo => {
 			return (
 				<div
 					onClick={() => props.deleteTodo(todo.id)}
